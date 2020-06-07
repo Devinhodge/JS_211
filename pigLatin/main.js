@@ -27,9 +27,6 @@ const pigLatin = (word) => {
       newWord = word.substring(vowel) + word.substring(0, vowel) + "ay";
       return newWord;
   }
-}
-
-
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
