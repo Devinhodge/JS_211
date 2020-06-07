@@ -14,6 +14,7 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
+
   let vowels = ['a', 'e', 'i', 'o', 'u'];
   let newWord = "";
 
@@ -27,6 +28,7 @@ const pigLatin = (word) => {
       return newWord;
   }
 }
+
 
 
 // the first function called in the program to get an input from the user
