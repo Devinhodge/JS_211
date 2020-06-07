@@ -14,6 +14,7 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
+
   let vowels = ['a', 'e', 'i', 'o', 'u'];
   let newWord = "";
 
@@ -21,7 +22,7 @@ const pigLatin = (word) => {
       newWord = word + "way";
       return newWord;
   } else {
-      let firstMatch = word.match(/[aeiou]/) || 0;
+      let firstMatch = word.match('a', 'e', 'i', 'o', 'u') || 0;
       let vowel = word.indexOf(firstMatch[0]);
       newWord = word.substring(vowel) + word.substring(0, vowel) + "ay";
       return newWord;
