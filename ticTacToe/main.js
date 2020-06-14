@@ -80,11 +80,9 @@ let numTurns = 0
 const ticTacToe = (row, column) => {
   // check that row and column are valid. (optional)
     // check that row and column are empty. (optional)
-
     // update the board
   board[row][column] = playerTurn;
   numTurns++; //numTurns = numTurns + 1;
-
   let winner = checkForWin();
     if(winner === true) {
       console.log("You Win!!")
@@ -95,24 +93,16 @@ const ticTacToe = (row, column) => {
     } else {
       if (playerTurn == "X") {
         playerTurn = "O";
-      } else if (playerTurn == "O") {
+    } else if (playerTurn == "O") {
           playerTurn = "X"
-        }
+      }
     }
-    // if they won print a nice message? (optional)
-    // if they won maybe clear the board? (optional)
-    //
-    // set the player turn to be the other player 
-
-
+  // set the player turn to be the other player 
   // Your code here to place a marker on the board
   // then check for a win
-
-
   // Your code here to place a marker on the board
   // then check for a win
 }
-
 
 const getPrompt = () => {
   printBoard();
@@ -128,13 +118,10 @@ const getPrompt = () => {
     });
   });
 }
-
-
 // Unit Tests
 // You use them run the command: npm test main.js
 // to close them ctrl + C
 if (typeof describe === 'function') {
-
   describe('#ticTacToe()', () => {
     it('should place mark on the board', () => {
       ticTacToe(1, 1);
@@ -161,7 +148,5 @@ if (typeof describe === 'function') {
     });
   });
 } else {
-
   getPrompt();
-
 }
