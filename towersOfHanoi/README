@@ -1,0 +1,32 @@
+TOWERS OF HANOI
+
+4 Disks [1, 2, 3, 4]
+3 Stacks [a, b, c]
+
+Only 1 disk can be moved at a time
+No larger disk may be placed on a smaller disk
+
+If a disk is on a another disk, then all disks below must have a > value, 
+else the stack is empty.
+
+The disk starts on one stack, and has a choice of two to choose from for a move.
+
+To WIN, all disks must be on stack B or stack C 
+IF there are ANY disks on stack A, the game is NOT complete. 
+
+
+
+Starting Point is stack A
+
+
+.slice() returns a copy od a portion of an array into a new array object 
+from start to end. start and end represent the index of items in the array.
+
+.forEach() method executes a provided funtion once for each array element *****
+
+.pop()method removes the last element from an array and returns that element. **
+This method changes the length of the array.**********************
+
+.concat() method is used to merge two or more arrays.  ??????????
+This method does not change the existing arrays, but instead returns a new array.
+
