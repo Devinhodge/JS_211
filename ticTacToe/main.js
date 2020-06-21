@@ -1,3 +1,4 @@
+
 'use strict';
 
 // brings in the assert module for unit testing
@@ -32,7 +33,6 @@ const printBoard = () => {
   console.log('2 ' + board[2].join(' | '));
 }
 
-
 const horizontalWin = () => {
   if((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") || (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")){
     return true
@@ -46,7 +46,6 @@ const horizontalWin = () => {
   return false;
 }
 
-
 const verticalWin = () => {
   if((board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") || (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O")){
     return true
@@ -57,7 +56,7 @@ const verticalWin = () => {
   if((board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X") || (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O")){
     return true
   }
-}
+}	
 
 const diagonalWin = () => {
   if((board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") || (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O")){
@@ -66,7 +65,7 @@ const diagonalWin = () => {
   if((board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") || (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O")){
     return true
   }
-}
+}	
 
 const checkForWin = () => {
   if(horizontalWin() || verticalWin() || diagonalWin()) {
@@ -74,8 +73,9 @@ const checkForWin = () => {
   } else {
     return false
   }
-}
+}	
 let numTurns = 0
+
 
 const ticTacToe = (row, column) => {
   // check that row and column are valid. (optional)
@@ -100,9 +100,7 @@ const ticTacToe = (row, column) => {
   // set the player turn to be the other player 
   // Your code here to place a marker on the board
   // then check for a win
-  // Your code here to place a marker on the board
-  // then check for a win
-}
+}	
 
 const getPrompt = () => {
   printBoard();
@@ -115,13 +113,16 @@ const getPrompt = () => {
         } else { 
           getPrompt();
         }
+      });
     });
-  });
-}
+  }
+
+
 // Unit Tests
 // You use them run the command: npm test main.js
 // to close them ctrl + C
 if (typeof describe === 'function') {
+
   describe('#ticTacToe()', () => {
     it('should place mark on the board', () => {
       ticTacToe(1, 1);
@@ -150,3 +151,5 @@ if (typeof describe === 'function') {
 } else {
   getPrompt();
 }
+
+

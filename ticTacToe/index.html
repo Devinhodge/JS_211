@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="tictactoe.css">
     <!-- link to JavaScript code -->
     <script src="dom-tictactoe.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
     <div class="container">
@@ -18,25 +19,26 @@
         <button onclick="resetBoard()" type="button" class="btn btn-primary btn-lg" name="button">Restart</button>
       </div>
 
-      <table align="center">
+      <table>
         <tr>
           <!-- Each table-data (td) has an id that matches it's position in the array or arrays [0][1] -->
-          <td id='0-0' onclick="handleClick(this)" ></td>
-          <td id='0-1' onclick="handleClick(this)" ></td>
-          <td id='0-2' onclick="handleClick(this)" ></td>
+          <td id='0-0' onclick="handleClick(this)"></td>
+          <td id='0-1' onclick="handleClick(this)"></td>
+          <td id='0-2' onclick="handleClick(this)"></td>
         </tr>
         <tr>
           <!-- onclick calls a function called handleClick and passes itself to it("this") -->
-          <td id='1-0' onclick="handleClick(this)" ></td>
-          <td id='1-1' onclick="handleClick(this)" ></td>
-          <td id='1-2' onclick="handleClick(this)" ></td>
+          <td id='1-0' onclick="handleClick(this)"></td>
+          <td id='1-1' onclick="handleClick(this)"></td>
+          <td id='1-2' onclick="handleClick(this)"></td>
         </tr>
         <tr>
-          <td id='2-0' onclick="handleClick(this)" ></td>
-          <td id='2-1' onclick="handleClick(this)" ></td>
-          <td id='2-2' onclick="handleClick(this)" ></td>
+          <td id='2-0' onclick="handleClick(this)"></td>
+          <td id='2-1' onclick="handleClick(this)"></td>
+          <td id='2-2' onclick="handleClick(this)"></td>
         </tr>
       </table>
     </div>
   </body>
 </html>
+
