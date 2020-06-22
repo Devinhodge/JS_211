@@ -10,7 +10,6 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-
 // the stacks objects represents the entire toy
 // the arrays are the rods in the toy
 // the numbers represent the disks
@@ -21,8 +20,8 @@ let stacks = {
 };
 
 //prints the "board"
-const printStacks = () => {
 
+const printStacks = () => {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
@@ -36,13 +35,12 @@ let n = 1;
  * @param {*} startStack the name of the startind stack to more the peive from
  * @param {*} endStack the name of the ending stack where the moved peice should land
  */
+
+
 const movePiece = (startStack, endStack) => {
-  // Your code here
-  let element = stacks[startStack].pop()
+  let element = stacks[startStack].pop();
     stacks[endStack].push(element);
 }
-
-
 
 /**
  * This function takes in the start stack name, and end stack name, 
@@ -52,9 +50,8 @@ const movePiece = (startStack, endStack) => {
  * @param {*} endStack the name of the ending stack where the moved peice should land
  */
 const isLegal = (startStack, endStack) => {
-  // Your code here
-  let element1 = [stacks[startStack].length-1]
-  let element2 = stacks[endStack]
+  let element1 = [stacks[startStack].length-1];
+  let element2 = stacks[endStack];
     if( element1 > 0 && element2.length == 0 ) {
     return true
      } else {
@@ -70,7 +67,6 @@ const isLegal = (startStack, endStack) => {
  * largest on bottom and smallest on top.
  */
 const checkForWin = () => {
-  // Your code here
   if(stacks.b.length === 4 || stacks.c.length === 4) {
     console.log("YOU WIN")
     return true;
@@ -88,12 +84,8 @@ startStack the stack they want to move from
 endStack the stack they want to move to
 */
 const towersOfHanoi = (startStack, endStack) => {
-  // Your code here
   movePiece(startStack, endStack);
-
 }
-
-
 
 
 
@@ -112,8 +104,6 @@ const getPrompt = () => {
     });
   });
 }
-
-
 
 if(typeof description === 'function') {
   describe("#testing if more works correctly", function(){
