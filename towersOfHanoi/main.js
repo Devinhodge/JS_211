@@ -38,9 +38,8 @@ let n = 1;
  */
 const movePiece = (startStack, endStack) => {
   // Your code here
-  // bad code....
-  stacks.b.push('x');
-
+  let element = stacks[startStack].pop()
+    stacks[endStack].push(element);
 }
 
 
@@ -54,19 +53,30 @@ const movePiece = (startStack, endStack) => {
  */
 const isLegal = (startStack, endStack) => {
   // Your code here
-
+  let element1 = [stacks[startStack].length-1]
+  let element2 = stacks[endStack]
+    if( element1 > 0 && element2.length == 0 ) {
+    return true
+     } else {
+       return false
+     }
 }
 
 
 
-/**
+/**b || c stacks correct
  * This function returns true, if the board is in a "winning state"
  * winnings state means: you are restacked on either stacks b or c with 
  * largest on bottom and smallest on top.
  */
 const checkForWin = () => {
   // Your code here
-
+  if(stacks.b.length === 4 || stacks.c.length === 4) {
+    console.log("YOU WIN")
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -79,6 +89,7 @@ endStack the stack they want to move to
 */
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
+  movePiece(startStack, endStack);
 
 }
 
@@ -89,22 +100,21 @@ const towersOfHanoi = (startStack, endStack) => {
 const getPrompt = () => {
   // first thing is print out the board
   printStacks();
-
   // it asks the user for the starting stack
   rl.question('start stack: ', (startStack) => {
-
     // once the user enters the starting stack, it asks for the ending stack
     rl.question('end stack: ', (endStack) => {
-
       // once the user enters the ending stack
       // it send both inputs (startstack and end stack) to a function callted towersOfHanoi()
       towersOfHanoi(startStack, endStack);
-
       // once that function returns, then call getPrompt() over again
       getPrompt();
     });
   });
 }
+
+
+
 if(typeof description === 'function') {
   describe("#testing if more works correctly", function(){
     it("moving to an empty slot is valid", function(){
@@ -113,34 +123,26 @@ if(typeof description === 'function') {
         b: [4, 3],
         c: [2],
       };
-
       // call the function (or code) you are testing
       movePiece('a', 'b');
-
       //verify the results
       let expectedSizeB = 1; 
       let actualSizeB = stacks['b'].length;
-
       assert.equal(actualSizeB, expectedSizeB);
 // *****assert.equals(stacks.b.length, 1, "Asser that stacks.b is of size 1");******
-
       let expectedSizeA = 0; 
       let actualSizeA = stacks['a'].length;
-
       assert.equal(actualSizeA, expectedSizeA);
     });
   })
   describe("# what are you testing", function(){
     it("Name of your test", function(){
       // setup your world
-
       // call the code you're testing
-
       // verify your results (using asser.equals, ...)
     })
   })
   console.log("------------>>> IN testing MODE");
-
 } else {
   console.log("------------>>> Playing the GAME");
 getPrompt();
