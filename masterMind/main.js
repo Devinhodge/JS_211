@@ -9,9 +9,11 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+let solution ="abcd";
+// let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+ //try to make the program generate a random solution
+let board = [];
 
-
-let solution = 'abcd'; //try to make the program generate a random solution
 
 let generateHint = function(guess){
   let solutionArray = solution.split('');
@@ -41,7 +43,11 @@ let askForGuess = function(){
     let hint = generateHint(guess);
     console.log(hint);
     if(guess === solution) {
-      console.log("You guessed it");
+      console.log("You guessed it!");
+      return "You guessed it!"
+    } else {
+      console.log("Wrong, guess again!")
+      generateHint(guess);
     }
     // .. some more stuff
     let gameOver; // figure out how to set this
