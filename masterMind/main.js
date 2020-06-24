@@ -9,26 +9,30 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+
+
 let solution = 'abcd'; //try to make the program generate a random solution
-
-
-
 
 let generateHint = function(guess){
   let solutionArray = solution.split('');
   let guessArray = guess.split('');
   let correctLetterLocations = 0;
+  let correctLetters = 0;
   for(let i = 0; i < solutionArray.length; i++) {
     if (solutionArray[i] === guessArray[i]){
       correctLetterLocations++;
       solutionArray[i] = null;
     }
-
   }
-  return correctLetterLocations;
+  for(let i = 0; i < solutionArray.length; i++){
+    let targetIndex = solutionArray.indexOf(guessArray[i]);
+    if(targetIndex > -1) {
+      correctLetters++;
+      solutionArray[targetIndex];
+    }
+  }
+  return correctLetterLocations + "-" + correctLetters;
 }
-
-
 
 
 
@@ -47,5 +51,4 @@ let askForGuess = function(){
     }
   })
 }
-// kick the game off
 askForGuess();
