@@ -9,13 +9,29 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let solution ="abcd";
-// let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
- //try to make the program generate a random solution
+let solution ="";
+let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 let board = [];
 
+// function printBoard() {
+//   for (let i = 0; i < board.length; i++) {
+//     console.log(board[i]);
+//   }
+// }
 
-let generateHint = function(guess){
+// function generateSolution() {
+//   for (let i = 0; i < 4; i++) {
+//     const randomIndex = getRandomInt(0, letters.length);
+//     solution += letters[randomIndex];
+//   }
+// }
+
+// function getRandomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
+
+
+function generateHint(guess){
   let solutionArray = solution.split('');
   let guessArray = guess.split('');
   let correctLetterLocations = 0;
@@ -38,7 +54,7 @@ let generateHint = function(guess){
 
 
 
-let askForGuess = function(){
+function askForGuess(){
   rl.question("Guess: ", function(guess) {
     let hint = generateHint(guess);
     console.log(hint);
