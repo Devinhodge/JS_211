@@ -4,6 +4,7 @@ const assert = require('assert');
 
 //readline library is used to read input from the user
 const readline = require('readline');
+const { start } = require('repl');
 
 // setting up the readline settings
 const rl = readline.createInterface({
@@ -37,10 +38,10 @@ let n = 1;
  */
 
 
-const movePiece = (startStack, endStack) => {
-  let element = stacks[startStack].pop();
-    stacks[endStack].push(element);
-}
+const movePiece = (startStack, endStack) => stacks[endStack].push(stacks[startStack].pop())
+  // let element = stacks[startStack].pop();
+    
+
 
 /**
  * This function takes in the start stack name, and end stack name, 
@@ -84,7 +85,10 @@ startStack the stack they want to move from
 endStack the stack they want to move to
 */
 const towersOfHanoi = (startStack, endStack) => {
-  movePiece(startStack, endStack);
+  if(isLegal(startStack, endStack)){
+    movePiece(startStack, endStack);
+    checkForWin()
+  }
 }
 
 
@@ -105,35 +109,59 @@ const getPrompt = () => {
   });
 }
 
-if(typeof description === 'function') {
-  describe("#testing if more works correctly", function(){
-    it("moving to an empty slot is valid", function(){
-      stacks = {
-        a: [1],
-        b: [4, 3],
-        c: [2],
-      };
-      // call the function (or code) you are testing
-      movePiece('a', 'b');
-      //verify the results
-      let expectedSizeB = 1; 
-      let actualSizeB = stacks['b'].length;
-      assert.equal(actualSizeB, expectedSizeB);
-// *****assert.equals(stacks.b.length, 1, "Asser that stacks.b is of size 1");******
-      let expectedSizeA = 0; 
-      let actualSizeA = stacks['a'].length;
-      assert.equal(actualSizeA, expectedSizeA);
+if(typeof describe === 'function') {
+ describe("towersOfHanoi", function(){
+    it("move piece to startStack to endStack", function(){
+      towersOfHanoi("a","c");
+      assert.deepEqual(stacks, {a: [4, 3, 2], b: [], c:[1]});
     });
   })
-  describe("# what are you testing", function(){
-    it("Name of your test", function(){
-      // setup your world
-      // call the code you're testing
-      // verify your results (using asser.equals, ...)
+  describe("#isLegal", function(){
+    it("if move is legal", function(){
+      stacks = {
+        a: [4, 3, 2, 1],
+        b: [],
+        c: [],
+      }; 
+      assert.equal(isLegal("a", "b"), true);
+    })
+    it("if move is not legal", function(){
+      stacks = {
+        a: [4, 3, 2],
+        b: [1],
+        c: [],
+      }; 
+      assert.equal(isLegal("a", "b"), false);
+      })
+  })
+  describe("#checkForWin", function(){
+    it("should detect win on stack b", function(){
+      stacks = {
+        a: [],
+        b: [4, 3, 2, 1],
+        c: [],
+      }; 
+      assert.equal(checkForWin(), true);
+    });
+    it("should detect win on stack c", function(){
+      stacks = {
+        a: [],
+        b: [],
+        c: [4, 3, 2, 1],
+      }; 
+      assert.equal(checkForWin(), true);
+    })
+    it("no win detected", function(){
+      stacks = {
+        a: [],
+        b: [4],
+        c: [3, 2, 1],
+      }; 
+      assert.equal(checkForWin(), false);
     })
   })
-  console.log("------------>>> IN testing MODE");
+   console.log("------------>>> IN testing MODE");
 } else {
-  console.log("------------>>> Playing the GAME");
+   console.log("------------>>> Playing the GAME");
 getPrompt();
 }
