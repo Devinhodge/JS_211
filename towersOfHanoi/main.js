@@ -70,7 +70,7 @@ if(typeof describe === 'function') {
       towersOfHanoi("a","c");
       assert.deepEqual(stacks, {a: [4, 3, 2], b: [], c:[1]});
     });
-  })
+  });
   describe("#isLegal", function(){
     it("if move is legal", function(){
       stacks = {
@@ -87,8 +87,8 @@ if(typeof describe === 'function') {
         c: [],
       }; 
       assert.equal(isLegal("a", "b"), false);
-      })
-  })
+      });
+  });
   describe("#checkForWin", function(){
     it("should detect win on stack b", function(){
       stacks = {
@@ -105,7 +105,7 @@ if(typeof describe === 'function') {
         c: [4, 3, 2, 1],
       }; 
       assert.equal(checkForWin(), true);
-    })
+    });
     it("no win detected", function(){
       stacks = {
         a: [],
@@ -113,8 +113,8 @@ if(typeof describe === 'function') {
         c: [3, 2, 1],
       }; 
       assert.equal(checkForWin(), false);
-    })
-  })
+    });
+  });
    console.log("------------>>> IN testing MODE");
 } else {
    console.log("------------>>> Playing the GAME");
