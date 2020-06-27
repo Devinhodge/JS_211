@@ -1,0 +1,99 @@
+
+Ensure you have installed all dependencies/packages: npm i
+
+Look at the Unit Test, see what is being called, passed as input arguments, and what the expected result are.
+
+Ensure you know how to run the unit test:
+npm test main.js
+
+Use a whiteboard to work out a solution to building the Mission to Mars program.
+
+This isn't an interactive game but instead a practice in classes.
+
+Translate the broad ideas to pseudo code
+
+Convert the pseudo code to real JavaScript Code
+
+Type into your text editor the JavaScript code you've come up with one step at a time
+
+Work through your bugs.
+
+Use node main.js to run the game
+
+Achieve green checks for each of your unit tests.
+
+Hints
+Run your unit tests first!!
+
+Use repl.it to write the solution code first. (its a faster environment vs using the node main.js command over and over again.)
+
+Read the comments in main.js
+
+Push yourself further.
+
+Look at your hints!
+
+Clone, setup, testing, and running instructions for all projects is below
+
+Cloning Your Project
+
+Click the 'Fork' button (choose your account if prompted).
+
+Copy HTTPS URL from your forked repository
+
+In your terminal/gitBash/CommandPrompt navigate (using cd) into a directory where you want to start keeping your repositories. (/jsDevFolder)
+
+Clone your new repository by typing git clone <forked clone URL> (the HTTPS URL you copied above) Forking a repository
+
+Now go into the new directory by using cd project-repo
+
+Add the base repository as an upstream git remote add upstream https://github.com/AustinCodingAcademy/<PROJECT-REPO>.git
+
+Check the configuration of your remotes with git remote -v, it should look very similar to this (except it'll be YOUR username)
+
+$ git remote -v
+
+origin  git@github.com:username/javascript-workbook.git (fetch)
+origin  git@github.com:username/javascript-workbook.git (push)
+upstream    git@github.com:AustinCodingAcademy/javascript-workbook.git (fetch)
+upstream    git@github.com:AustinCodingAcademy/javascript-workbook.git (push)
+Setup
+From your project directory, run npm i to tell NPM to install all the node modules we use in this class (see package.json)
+
+Use your textEditor (VS Code) to change your files.
+
+When you're finished git status, stage your file git add ., commit your changes git commit -m "functions working", and push to GitHub git push
+
+git status
+git add .
+git commit -m "Initial Commit"
+git push origin gh-pages
+Now go to your forked repository on GitHub (at https://github.com/your-username/javascript-workbook). A little yellow box should have popped up asking you to make a Pull Request. Click to review.
+
+Click "Create Pull Request"
+
+Every time you make a change and push to GitHub, this PR will automatically update. No need to do it more than once.
+
+Get latest workbook updates
+To get the latest code/homework/test updates, be sure to have a "clean working directory" by committing or removing all of your changes. You check for a "clean working environment" by running git status and making sure no files show up.
+
+Run git pull upstream gh-pages
+
+Contributing workflow
+
+Running the apps
+Simply run node path/to/file.js
+
+example node 01week/rockPaperScissors.js
+
+Running Tests
+Tests are a great way to make sure you code works the way you planned it would, and to make sure you don't break something in the future. We will be using them to test our understanding of the lesson. It's also our main way to assign grades for an assignment.
+
+To run a the tests on a file run npm test path/to/file.js, etc.
+
+Running the Linter
+Simply run npm run lint
+
+Running the Server
+Run npm start
+To break out of the server, press ctrl + c
