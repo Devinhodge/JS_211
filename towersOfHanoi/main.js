@@ -66,7 +66,7 @@ const getPrompt = () => {
 
 if(typeof describe === 'function') {
  describe("towersOfHanoi", function(){
-    it("move piece to startStack to endStack", function(){
+    it("move piece from startStack to endStack", function(){
       towersOfHanoi("a","c");
       assert.deepEqual(stacks, {a: [4, 3, 2], b: [], c:[1]});
     });
