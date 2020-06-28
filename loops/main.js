@@ -14,9 +14,12 @@ let person = {
 };
 console.log(person);
 //for..in loop and if statement for odd birthday
-for (let prop in person){
-  console.log(prop);
-  console.log(person[prop]);
+for (let prop in person) {
+  if (prop === "birthDate") {
+  let year = parseInt(person["birthDate"].slice(-4));
+  (year % 2 !== 0)
+      console.log(year, "is odd");
+  }
 }
 
 
@@ -25,19 +28,19 @@ for (let prop in person){
 let arrayOfPersons= [
   {
     firstName: "Devin",
-    lasyName: "Hodge",
+    lastName: "Hodge",
     birthDate: "Aug 6, 1989",
     gender: "male",
   },
   {
     firstName: "Terry",
-    lasyName: "Crews",
+    lastName: "Crews",
     birthDate: "Dec 18, 1970",
     gender: "male",
   },
   {
     firstName: "Alexis",
-    lasyName: "Martinez",
+    lastName: "Martinez",
     birthDate: "May 27, 2006",
     gender: "female",
   }
@@ -45,11 +48,16 @@ let arrayOfPersons= [
 console.log(arrayOfPersons);
 
 //.map to map over the arrayOfPersons
-
+arrayOfPersons.map(item => {
+  return item;
+});
 
 
 //.filter only males in the array
-
+let men = arrayOfPersons.filter(arrayOfPersons => arrayOfPersons.gender === "male");
+console.log(men);
 
 
 //.filter people born before jan 1, 1990
+let old = arrayOfPersons.filter(birthDate => birthDate["birthDate"].slice(-4) < "1990");
+console.log(old);
