@@ -20,8 +20,8 @@ class CrewMember {
     this.ship = ship;
   }
   enterShip = (ship) => {
-    ship.crew.push(this);
     this.ship = ship;
+    ship.crew.push(this); 
   }
 }
 //created crew members from the tests created
