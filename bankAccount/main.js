@@ -29,15 +29,22 @@ class BankAccount {
       }
       return sum;
     }
+
+    /**
+     * add the charge as the transaction to the transactions array
+     * payee the name of the payee
+     * amt the amount being charged
+     * positive amounts are removed from the balance
+     * Negative amounts are refunds
+     */
   charge(payee, amt){
-    // add code
-    // if statement for over charges
+    //TODO: currently this allows overcharge, 
+    // if statement to prevent over charge.
     if(amt < this.balance()) {
       let newCharge = new this.transactions(-amt, payee);
       this.transactions.push(newCharge);
     }
-  }
-  
+  } 
 }
   
 
@@ -56,21 +63,24 @@ class Transaction {
 
 
 
-let b1 = new BankAccount("xxx012", "Jane Doe");
-b1.deposit(300);
-b1.deposit(15);
-b1.deposit(35);
-b1.deposit(-50);
-let b2 = new BankAccount("yyy3330", "James Smith");
+let acct1 = new BankAccount("5553429", "Jane Doe");
 
-console.log(b1.owner, "--> Jane Doe");
-console.log(b2.owner, "-->James Smith");
+console.log(acct1.accountNumber); //5553429
+console.log(acct1.owner); //Jane Doe
+console.log(acct1.balance()); // 0
 
-console.log(b1.accountNumber);
-console.log(b2.accountNumber);
+acct1.deposit(100);
+console.log(acct1.balance()); // 100
 
-let t1 = new Transaction(45, "Targe");
-let t2 = new Transaction(500, "Deposit");4
+acct1.deposit(-200); // should no be allowed
+console.log(acct1.balance()); // 100
 
-console.log(t1.payee)
-console.log(t2.amount)
+acct1.charge('Target', 30.50);
+acct1.charge('FreeBirds', 15.15);
+console.log(acct1.balance()); // 54.35
+
+acct1.charge('Diamond Shop', 1000) // Should not be allowed
+console.log(acct.balance()); // 54.35
+
+acct.charge('Target', -20) // refund
+console.log(acct1.balance()); //74.35
