@@ -38,8 +38,6 @@ class BankAccount {
      * Negative amounts are refunds
      */
   charge(payee, amt){
-    //TODO: currently this allows overcharge, 
-    // if statement to prevent over charge.
     if(amt < this.balance()) {
       let newCharge = new this.transactions(-amt, payee);
       this.transactions.push(newCharge);
