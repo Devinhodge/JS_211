@@ -1,21 +1,18 @@
 
 'use strict';
-//created a branch to commit to GH
-
-// brings in the assert module for unit testing
 const assert = require('assert');
-// brings in the readline module to access the command line
 const readline = require('readline');
-// use the readline module to print out to the command line
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
+let box = document.getElementById("box");
+let displayBox = document.getElementById("showAnswer");
+
 
 const pigLatin = (word) => {
   let vowels = ['a', 'e', 'i', 'o', 'u'];
-  let without;
   let newWord = "";
 
   if (vowels.indexOf(word[0]) > -1) {
@@ -27,6 +24,11 @@ const pigLatin = (word) => {
       newWord = word.substring(vowel) + word.substring(0, vowel) + "ay";
       return newWord;
   }
+}
+
+let translate = () => {
+  let text = box.value;
+  displayBox.innerHTML = pigLatin(word)
 }
 
 // the first function called in the program to get an input from the user
