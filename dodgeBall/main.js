@@ -59,7 +59,7 @@ class player {
 }
 class blueTeammate {
   constructor(){}
-}
+}// ONLY USE ONE CLASS FOR BOTH TEAMS!!!
 class redTeammate {
   constructor(){}
 }
