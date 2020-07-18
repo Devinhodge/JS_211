@@ -1,0 +1,26 @@
+body {
+  display: flex;
+}
+
+button {
+  height: 40px;
+  width: fit-content;
+  border-radius: 25px;
+  background-color: rgb(195, 195, 247);
+  border: none;
+  font-size: 18px;
+}
+
+li {
+  flex-direction: row;
+  margin: 10% 50%;
+  width: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+img {
+  width: 120px;
+  padding-top: 10px;
+  border-radius: 25%;
+}

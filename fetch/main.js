@@ -15,33 +15,39 @@ function processUsers(users){
   users.forEach(function(user){
     processingSingleUser(user);
   });
-
 }
 
-
-function processSingleUser(user){
+function processingSingleUser(user){
+  let img = document.createElement("img");
   let firstName = user.name.first; //get the first name
   let lastName = user.name.last; // get the last name
-
-
   let li = document.createElement("li");
-  li.innerText = firstName+""+lastName;
+  li.innerText = firstName+" "+lastName;
 
   // get ul element
   let ul = document.getElementById("people");
   //add the newly created li as a child of the ul
   ul.appendChild(li);
+  img.src = user.picture.thumbnail;
+  let btn = document.createElement("button")
+  li.appendChild(btn)
+  li.appendChild(img)
+  let phone = user.cell
 
-  li.addEventListener("cick", function(){
-    //when the li is clicked
-    //if the li has the class blue, remove the class blue and add the class red
-    if (li.classList.contains("blue")){
-      li.classList.add("red");
-      li.classList.remove("blue");
-    } else {
-      //otherwise, add the class blue and remove the class red
-      li.classList.add("blue");
-      li.classList.remove("red");
+  btn.innerText = "Show Contact"
+  btn.addEventListener("click", function(){
+
+  let liDiv = document.createElement("div");
+  liDiv.innerText = phone;
+  li.appendChild(liDiv); 
+
+  if (liDiv == 'block') {
+    phone.style.display = 'none';
+    btn.innerText = 'Show Contact';
+  }
+  else {
+    phone.style.display = 'block';
+    btn.innerText = 'Hide Contact';
     }
   })
-}
+} 
