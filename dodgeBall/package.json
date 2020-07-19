@@ -1,0 +1,12 @@
+{
+  "name": "dodgeBall",
+  "version": "1.0.0",
+  "description": "We are in need of a sorting and organizing app for our community dodge ball league. \r There are already 6 players signed up and we hope to get more! \r We need to select from our currently signed-up people to make them dodge ball players,\r and from there we need to be able to select them to be on different teams. \r Please look over the Specs Checklist to make sure you understand the needs of this app.",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
