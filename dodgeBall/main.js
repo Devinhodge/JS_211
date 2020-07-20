@@ -1,5 +1,4 @@
 'use strict'
-let assert = require('assert')
 
 const arrOfPeople = [
   {
@@ -189,6 +188,10 @@ const makePlayer = (id) => {
 }
 
 ///////TESTS\\\\\\\
+
+//I started to do the tests, and it seemed to mess up my code... not sure why
+//I was took the code from the ship assignment and was using that as a template..
+
 
 if (typeof describe === 'function'){
   /*describe('Player', function(){
