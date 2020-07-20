@@ -73,6 +73,7 @@ class Player {
     this.players.push(player);
   }
 }
+
 class Teammate extends Player {
   constructor(person, color, mascot){
     super()
@@ -87,7 +88,7 @@ class Teammate extends Player {
   joinRedTeam(player){
     this.players.push(player);
   }
-}
+  
 let newTeammate = new Teammate()
 
 const listPeopleChoices = () => {
