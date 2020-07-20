@@ -75,7 +75,7 @@ class Player {
 }
 class Teammate extends Player {
   constructor(person, color, mascot){
-    super()
+    super() //calls parent constructor to access data Teammate overwrote.. 
     this.person = person;
     this.color = color,
     this.mascot = mascot,
