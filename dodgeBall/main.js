@@ -1,4 +1,14 @@
 'use strict'
+/*const assert = require('assert');
+// brings in the readline module to access the command line
+const readline = require('readline');
+// use the readline module to print out to the command line
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});*/
+
+
 
 const arrOfPeople = [
   {
@@ -73,10 +83,9 @@ class Player {
     this.players.push(player);
   }
 }
-
 class Teammate extends Player {
   constructor(person, color, mascot){
-    super() //calls parent constructor to access data Teammate overwrote.. 
+    super()
     this.person = person;
     this.color = color,
     this.mascot = mascot,
@@ -88,7 +97,7 @@ class Teammate extends Player {
   joinRedTeam(player){
     this.players.push(player);
   }
-  
+}
 let newTeammate = new Teammate()
 
 const listPeopleChoices = () => {
@@ -200,41 +209,5 @@ if (typeof describe === 'function'){
       const makePlayer = new Player('Devin Hodge', 18, 'logic', 'Austin', true, true, false, true, 5);
       //assert.equal(makePlayer.canThrowBall, true);
       //assert.equal(makePlayer.canDodgeBall, true);
-    });
-
-    it('can enter a ship', function(){
-      // this creates a new Ship. Can you build a class that can be called so that this Ship can be built?
-      let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
-      const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
-      crewMember1.enterShip(mav);
-      assert.equal(crewMember1.ship, mav);
-      assert.equal(mav.crew.length, 1);
-      assert.equal(mav.crew[0], crewMember1);
-    });
-  });
-
-  describe('Teammate', function(){
-    it('should have a name, a type, an ability and an empty crew upon instantiation', function(){
-      let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
-      assert.equal(mav.name, 'Mars Ascent Vehicle');
-      assert.equal(mav.type, 'MAV');
-      assert.equal(mav.ability, 'Ascend into low orbit');
-      assert.equal(mav.crew.length, 0);
-    });
-
-    it('can return a mission statement correctly', function(){
-      let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
-      const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
-      let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
-      const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
-      assert.equal(mav.missionStatement(), "Can't perform a mission yet.");
-      assert.equal(hermes.missionStatement(), "Can't perform a mission yet.");
-
-      crewMember1.enterShip(mav);
-      assert.equal(mav.missionStatement(), "Ascend into low orbit"); // turn on and turn off of car example
-
-      crewMember2.enterShip(hermes);
-      assert.equal(hermes.missionStatement(), "Interplanetary Space Travel");
-    });
-  });*/
+    });*/
 } 
