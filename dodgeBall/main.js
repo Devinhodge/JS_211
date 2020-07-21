@@ -199,15 +199,14 @@ const makePlayer = (id) => {
 
 ///////TESTS\\\\\\\
 
-//I started to do the tests, and it seemed to mess up my code... not sure why
-//I was took the code from the ship assignment and was using that as a template..
-
+//having a hard time with the 'person' part and getting the tests to pass...
 
 if (typeof describe === 'function'){
-  /*describe('Player', function(){
+  describe('Player', function(){
     it('should have person, canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience', function(){
-      const makePlayer = new Player('Devin Hodge', 18, 'logic', 'Austin', true, true, false, true, 5);
-      //assert.equal(makePlayer.canThrowBall, true);
-      //assert.equal(makePlayer.canDodgeBall, true);
-    });*/
+      const makePlayer = new Player('Devin Hodge', true, true, true, false, true, 5);
+      assert.equal(makePlayer.canThrowBall, true);
+      assert.equal(makePlayer.canDodgeBall, true);
+    })
+  })
 } 
