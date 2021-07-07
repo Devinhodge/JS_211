@@ -1,0 +1,12 @@
+{
+  "name": "towersOfHanoi",
+  "version": "1.0.0",
+  "description": "TOWERS OF HANOI",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
